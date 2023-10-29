@@ -1,8 +1,11 @@
 import express from "express";
 import {pool} from './db.js'
 import {PORT} from './config.js'
+import pg from 'pg'
 
 const app = express();
+
+
 
 app.get("/", async (req, res) => {
     const [rows] = await pool.query(`SELECT * FROM users`)
